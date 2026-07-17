@@ -1,10 +1,10 @@
-const express = require("express");
-const { todos } = require("./todos");
-const dotenv = require("dotenv");
-dotenv.config();
+import express, { json } from "express";
+import { todos } from "./todos.js";
+import { config } from "dotenv";
+config();
 
 const app = express();
-app.use(express.json());
+app.use(json());
 
 app.get("/", (req, res) => {
   res.status(200).send("Welcome to home page!");
