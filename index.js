@@ -1,10 +1,17 @@
 import express, { json } from "express";
 import { todos } from "./todos.js";
 import { config } from "dotenv";
+import url from "url";
+import path from "path";
 config();
 
 const app = express();
 app.use(json());
+
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+console.log(__filename, __dirname);
 
 app.get("/", (req, res) => {
   res.status(200).send("Welcome to home page!");
