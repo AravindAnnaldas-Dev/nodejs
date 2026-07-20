@@ -1,4 +1,4 @@
-const todos = [
+export const todos = [
   {
     id: 1,
     task: "Learn JavaScript Closures",
@@ -60,7 +60,3 @@ const todos = [
     status: "Completed",
   },
 ];
-
-module.exports = {
-  todos,
-};
